@@ -1,0 +1,14 @@
+# 赛途车行
+
+> 赛途车行（saituqimao.cn）是烟台专业的汽车销售服务商，主营新车、二手车、SUV、轿车、MPV、新能源车等各类车型。精选好车，品质保障，提供专业购车咨询和售后服务。
+
+## 主要页面
+- [首页](https://saituqimao.cn/): 赛途车行官方网站，汽车销售服务介绍
+- [车型展示](https://saituqimao.cn/vehicles/): 新车、二手车、SUV、轿车、MPV、新能源车等各类车型展示
+- [关于我们](https://saituqimao.cn/about/): 赛途车行公司介绍、资质和服务理念
+- [新闻资讯](https://saituqimao.cn/news/): 汽车行业动态、购车指南、用车知识
+- [联系我们](https://saituqimao.cn/contact/): 联系方式和地址
+
+## 站点信息
+- [网站地图](https://saituqimao.cn/sitemap.xml): XML 格式站点地图
+- [robots.txt](https://saituqimao.cn/robots.txt): 爬虫访问规则
