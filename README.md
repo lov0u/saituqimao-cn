@@ -6,3 +6,5 @@ saituqimao.cn 网站 - Next.js
 <!-- Docker rebuild - 2026-08-08 10:17:10 -->
 
 <!-- Fix cache - 2026-08-08 10:18:46 -->
+
+<!-- Fix Dockerfile - 2026-08-08 10:21:02 -->
