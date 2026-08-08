@@ -99,16 +99,6 @@ export default async function NewsDetailPage({
               </p>
             )}
           </div>
-
-          {article.coverImage && (
-            <div className="rounded-2xl overflow-hidden shadow-xl mb-8">
-              <img
-                src={article.coverImage}
-                alt={article.title}
-                className="w-full h-auto"
-              />
-            </div>
-          )}
         </div>
       </section>
 
