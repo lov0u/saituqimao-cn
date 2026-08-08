@@ -8,7 +8,7 @@ on:
 env:
   ACR_REGISTRY: crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com
   ACR_NAMESPACE: lov0u
-  IMAGE_NAME: saituqimao
+  IMAGE_NAME: saituqimao-cn
   SITE_SLUG: saituqimao
   PORT: 3004
 
@@ -26,8 +26,8 @@ jobs:
         context: .
         push: true
         tags: |
-          crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao:latest
-          crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao:${{github.sha}}
+          crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao-cn:latest
+          crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao-cn:${{github.sha}}
 
     - name: Deploy to server
       uses: appleboy/ssh-action@v1
@@ -36,21 +36,21 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
-          echo "=== Deploy saituqimao ==="
+          echo "=== Deploy saituqimao-cn ==="
           echo "Login ACR..."
           docker login crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }}
           echo "Pull image..."
-          docker pull crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao:latest
+          docker pull crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao-cn:latest
           echo "Stop old container..."
-          docker stop saituqimao || true
-          docker rm saituqimao || true
+          docker stop saituqimao-cn || true
+          docker rm saituqimao-cn || true
           echo "Start new container..."
           docker run -d \
-            --name saituqimao \
+            --name saituqimao-cn \
             --restart always \
             -p 3004:3000 \
             -e NODE_ENV=production \
-            crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao:latest
+            crpi-e6ejb7mi9ku0ep4b.cn-shanghai.personal.cr.aliyuncs.com/lov0u/saituqimao-cn:latest
           echo "Prune old images..."
           docker image prune -f
           echo "Done!"
