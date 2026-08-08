@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getArticle, getAllArticleSlugs } from "@/lib/payload";
 import { companyInfo } from "@/lib/company";
+import ArticleCharts from "@/app/ArticleCharts";
 
 export const revalidate = 3600;
 
@@ -116,10 +117,13 @@ export default async function NewsDetailPage({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="stream-divider mb-8" />
           {article.content ? (
-            <div
-              className="prose-content"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
+            <>
+              <div
+                className="prose-content"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+              <ArticleCharts />
+            </>
           ) : (
             <p className="text-neutral-500 text-center py-8">
               文章内容加载中...
