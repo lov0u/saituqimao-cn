@@ -10,3 +10,5 @@ saituqimao.cn 网站 - Next.js
 <!-- Fix Dockerfile - 2026-08-08 10:21:02 -->
 
 <!-- Fix tsconfig - 2026-08-08 10:22:50 -->
+
+<!-- Fix ACR name - 2026-08-08 10:35:18 -->
